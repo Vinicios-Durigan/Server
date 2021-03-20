@@ -21,11 +21,11 @@ appointmentsRouter.get('/', async (request, response) => {
 
 appointmentsRouter.post('/', async (request, response) => {
   try {
-    const { provider, date } = request.body;
+    const { provider_id, date } = request.body;
     //transformacào de dados
     const parseDate = (parseISO(date));
     const createAppointment = new CreateAppointmentService();
-    const appointment = await createAppointment.execute({date:parseDate,provider})
+    const appointment = await createAppointment.execute({date:parseDate,provider_id})
     return response.json(appointment)
   } catch (error) {
     return response.status(400).json({ error: error.message });
