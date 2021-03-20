@@ -1,0 +1,39 @@
+Arguments: 
+  D:\nodejs\node.exe C:\Users\user\Desktop\node_modules\yarn\bin\yarn.js add ts-node-dev -D
+
+PATH: 
+  D:\vendor\bin;D:\vendor\conemu-maximus5\ConEmu\Scripts;D:\vendor\conemu-maximus5;D:\vendor\conemu-maximus5\ConEmu;C:\Program Files (x86)\MySQL\MySQL for Visual Studio 1.2.9\Dependencies;C:\Users\user\.dotnet\tools;C:\Users\user\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\user\AppData\Local\GitHubDesktop\bin;C:\Users\user\AppData\Roaming\npm;C:\Program Files\Git\cmd;C:\flutter\bin;C:\Windows\System32;C:\Program File\Git\bin\git.exe;C:\Program File\Git\cmd;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files\MariaDB 10.5\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;D:\nodejs\node_modules\npm\bin;C:\Users\user\Desktop\node_modules\yarn\bin;D:\nodejs\;C:\Users\user\AppData\Local\Microsoft\WindowsApps;C:\Users\user\.dotnet\tools;C:\Users\user\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\user\AppData\Local\GitHubDesktop\bin;C:\flutter\bin;C:\Users\user\Desktop\node_modules\yarn\bin;C:\Users\user\AppData\Roaming\npm;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;D:
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.15.5
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: D:\NodeDev\Project\backEnd\package.json: Unexpected token } in JSON at position 89
+      at JSON.parse (<anonymous>)
+      at C:\Users\user\Desktop\node_modules\yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\user\Desktop\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\user\Desktop\node_modules\yarn\lib\cli.js:321:13
+
+npm manifest: 
+  {
+    "devDependencies": {
+      "@types/express": "^4.17.11",
+      "typescript": "^4.2.3",
+    },
+    "dependencies": {
+      "express": "^4.17.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
