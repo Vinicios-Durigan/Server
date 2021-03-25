@@ -4,9 +4,9 @@ import Routes, { request, response } from 'express';
 import {getCustomRepository} from 'typeorm';
 import { parseISO } from 'date-fns';
 //Repositorios
-import AppointmentsRepository from '../repositories/AppointmentsRepository';
-import CreateAppointmentService from '../service/CreateAppointmentService';
-import ensureAthentication from '../middlewares/ensureAuthenticated';
+import AppointmentsRepository from '@modules/appointments/repositories/AppointmentsRepository';
+import CreateAppointmentService from '@modules/appointments/services/CreateAppointmentService';
+import ensureAthentication from '@modules/users/infra/http/middlewares/ensureAuthenticated';
 
 
 //--------------------Code------------------------

@@ -1,7 +1,8 @@
 // Verifica se o Usuario está autenticado na aplicação atravez do Token JWT
 import { NextFunction, Request, Response } from 'express';
 import { verify } from 'jsonwebtoken';
-import auth from '../config/auth';
+import auth from '@config/auth';
+import AppErrors from '@shared/errors/AppError';
 
 interface TokenPayload {
   iat: number;
@@ -33,7 +34,7 @@ export default function ensureAuthenticated(
     }
     return next();
   } catch (err) {
-     throw new Error('Invalid JTW token')
+    throw new AppErrors('Invalid JTW token');
   }
 
 

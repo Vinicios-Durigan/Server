@@ -1,6 +1,6 @@
 // express
 import Routes, { request, response } from 'express';
-import AuthenticateUserService from '../service/AuthenticateUserService';
+import AuthenticateUserService from '@modules/users/services/AuthenticateUserService';
 //--------------------Code------------------------
 const sessionsRoutes = Routes();
 //getAll Agendamentos 
