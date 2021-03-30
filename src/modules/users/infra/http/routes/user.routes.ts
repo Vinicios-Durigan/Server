@@ -5,9 +5,11 @@ import uploadConfig from '@config/upload';
 import ensureAuthenticated from '@modules/users/infra/http/middlewares/ensureAuthenticated';
 import createUserService from '@modules/users/services/CreateUserService';
 import UpdateUserAvatarServicer from '@modules/users/services/UpdateUserAvatarService';
+import UsersRepository from '@modules/users/infra/typeorm/repositories/UserRepository';
 //--------------------Code------------------------
 const usersRouter = Routes();
 const upload = multer(uploadConfig);
+
 //getAll Agendamentos 
 
 
@@ -15,7 +17,8 @@ usersRouter.post('/', async (request, response) => {
   try {
   
     const { name, email, password } = request.body;
-    const createUser = new createUserService();
+    const usersRepository = new UsersRepository
+    const createUser = new createUserService(usersRepository);
 
     const user = await createUser.execute({
       name,
@@ -33,8 +36,8 @@ usersRouter.post('/', async (request, response) => {
 usersRouter.patch('/avatar',ensureAuthenticated, upload.single('avatar'),
   async (request, response) => {
     try {
-
-      const updateUserAvatar = new UpdateUserAvatarServicer();
+      const usersRepository = new UsersRepository
+      const updateUserAvatar = new UpdateUserAvatarServicer(usersRepository);
 
       const user = await updateUserAvatar.execute({
         user_id: request.user.id,
